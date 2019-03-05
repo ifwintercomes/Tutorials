@@ -3,8 +3,9 @@ package user.ui;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import user.dao.UserDAO;
 import user.vo.User;
+import user.dao.UserDAO;
+import user.controller.Interceptor;
 
 /**
  * 회원 관리 프로그램의 사용자 화면
@@ -17,6 +18,7 @@ public class UserUI {
 	 * 생성자. 메뉴화면을 띄우고 사용자의 입력을 받는다.
 	 * */
 	public UserUI() {
+		
 		
 		while(true) {
 			//메인메뉴를 출력한다
@@ -63,6 +65,7 @@ public class UserUI {
 		System.out.println("[ 회원 관리 ]");
 		System.out.println("1. 회원정보 등록");
 		System.out.println("2. 전체 회원 목록");
+		System.out.println("3. 회원 검색");
 		System.out.println("9. 프로그램 종료");
 		System.out.print("* 메뉴 번호를 선택하세요 > ");	
 	}
@@ -101,9 +104,11 @@ public class UserUI {
 		
 		if (res) {
 			System.out.println("저장되었습니다.");
+			return;
 		}
 		else {
 			System.out.println("저장 실패하였습니다.");
+			return;
 		}
 	}
 	
